@@ -1,4 +1,29 @@
 body {
 	color: #FFFFFF;
 	background-color: #23272A;
+	font-family: 'Whitney';
+}
+
+button {
+	font-family: 'Whitney';
+}
+
+@font-face {
+	font-family: 'Whitney';
+	src: url('../whitney-fonts/whitneymedium.woff');
+}
+
+@font-face {
+	font-family: 'Whitney Bold';
+	src: url('../whitney-fonts/whitneybold.woff');
+}
+
+@font-face {
+	font-family: 'Whitney Semibold';
+	src: url('../whitney-fonts/whitneysemibold.woff');
+}
+
+@font-face {
+	font-family: 'Whitney Italic';
+	src: url('../whitney-fonts/whitneymediumitalic.woff');
 }
