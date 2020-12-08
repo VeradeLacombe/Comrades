@@ -12,6 +12,7 @@
 	<link href="css/loginPage.css" rel="stylesheet" type="text/css">
 	
 	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="js/loginPage.js"></script>
 </head>
 
 <body>
@@ -29,7 +30,10 @@
 				<input type="password" id="password" required>
 			</div>
 		</form>
-	<p id="forgot">Forgot password?</p>
+	
+	<div class="popup" onclick="Popup()"><p id="forgot">Forgot password?</p>
+		<span class="popuptext" id="myPopup">We have sent you an email to change your password</span>
+	</div>
 	
 	<button class="LoginButton">Login</button>
 </body>
