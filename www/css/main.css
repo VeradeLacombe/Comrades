@@ -8,6 +8,10 @@ button {
 	font-family: 'Whitney';
 }
 
+input {
+	color: #FFFFFF;
+}
+
 @font-face {
 	font-family: 'Whitney';
 	src: url('../whitney-fonts/whitneymedium.woff');
@@ -27,3 +31,10 @@ button {
 	font-family: 'Whitney Italic';
 	src: url('../whitney-fonts/whitneymediumitalic.woff');
 }
+
+.fas, .fa-arrow-left {
+	margin-left: 15px;
+	margin-top: 15px;
+}
+
+

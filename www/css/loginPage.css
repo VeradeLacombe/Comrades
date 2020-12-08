@@ -1,0 +1,59 @@
+body {
+	background-image: url("../img/IndexBackgroundTile.png");
+	background-size: 250px;
+	background-repeat: repeat;
+	margin: 0;
+}
+
+.LoginButton {
+	width: 90vw;
+	height: 35px;
+	border-radius: 5px;
+	border: none;
+	background-color: #7289DA;
+	font-size: 12px;
+	color: #FFFFFF;
+	margin: auto;
+	display: block;
+	margin-top: 4vh;
+	}
+
+.welcome {
+	text-align: center;
+	margin-top: 5vh;
+	font-size: 22px;
+	margin-bottom: 2vh;
+}
+
+.Container {
+	margin-top: 20px;
+	background-color: #23272A;
+	margin-left: 5vw;
+	margin-right: 5vw;
+	padding: 8px;
+	font-size: 12px;
+	color: #99AAB5;
+}
+
+input {
+	width: 100%;
+	padding-top: 8px;
+	background-color: #23272A;
+	border: none;
+}
+
+.info {
+	text-align: center;
+	font-size: 12px;
+	color: #99AAB5;
+	margin-bottom: 5vh;
+} 
+
+#forgot {
+	text-align:left;
+	font-size: 12px;
+	color: #7289DA;
+	margin-left: 5vw;
+	margin-top: 3vh;
+	
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta name="format-detection" content="telephone=no" />
+	<meta name="msapplication-tap-highlight" content="no" />
+	<meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+	
+	<title>loginPage</title>
+	
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/loginPage.css" rel="stylesheet" type="text/css">
+	
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body>
+	<i class= "fas fa-arrow-left" style="font-size:18px" id= "backButton" onClick="window.location.href = 'index.html';"></i>
+	<h2 class="welcome">Welcome back!</h2>
+	<p class="info">We are happy to see you.<br>Login with your Discord account and get started!</p>
+	
+	<form class="centerHorizontally" id="form">
+			<div class="Container">
+				<label>Email or phone number<br></label>
+				<input type="text" id="username" required>
+			</div>
+			<div class="Container">
+				<label>Password<br></label>
+				<input type="password" id="password" required>
+			</div>
+		</form>
+	<p id="forgot">Forgot password?</p>
+	
+	<button class="LoginButton">Login</button>
+</body>
+</html>
