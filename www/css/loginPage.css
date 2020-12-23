@@ -25,23 +25,6 @@ body {
 	margin-bottom: 2vh;
 }
 
-.Container {
-	margin-top: 20px;
-	background-color: #23272A;
-	margin-left: 5vw;
-	margin-right: 5vw;
-	padding: 8px;
-	font-size: 12px;
-	color: #99AAB5;
-}
-
-input {
-	width: 100%;
-	padding-top: 8px;
-	background-color: #23272A;
-	border: none;
-}
-
 .info {
 	text-align: center;
 	font-size: 12px;

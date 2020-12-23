@@ -23,6 +23,11 @@
 		
 		<div id="gridMain">
 			
+			<div class="textInputContainer">
+				<label>Circle name<br></label>
+				<input type="text" id="circleName" required>
+			</div>
+			
 			<div class="chooseButtonsContainer">
 				<div class="chooseButton">
 					<input type="radio" id="openButton" name="open or close" onChange="radioClick()"/>
@@ -35,9 +40,7 @@
 				</div>
 			</div>
 			
-			<div class="info" id="explainCloseorOpen">
-			
-			</div>
+			<div class="info" id="explainCloseorOpen"></div>
 			
 			<div class="chooseButtonsContainer">
 				<div class="chooseButton">
@@ -52,20 +55,18 @@
 				
 			</div>
 			
-			<div class="info" id="explainConnectorChitchat">
-			
-			</div>
+			<div class="info" id="explainConnectorChitchat"></div>
 			
 			<div class="chooseButtonsContainer"> 
 				
 				<div class="chooseButton">
-					<input type="radio" id="audioButton" name="audio, text or video" onChange="radioClick()"/>
-					<label for="audioButton">Audiocall</label>
+					<input type="radio" id="textmessagesButton" name="audio, text or video" onChange="radioClick()"/>
+					<label for="textmessagesButton">Text message</label>
 				</div>
 				
 				<div class="chooseButton">
-					<input type="radio" id="textmessagesButton" name="audio, text or video" onChange="radioClick()"/>
-					<label for="textmessagesButton">Text message</label>
+					<input type="radio" id="audioButton" name="audio, text or video" onChange="radioClick()"/>
+					<label for="audioButton">Audiocall</label>
 				</div>
 				
 				<div class="chooseButton">
@@ -75,9 +76,7 @@
 						
 			</div>
 			
-		<div class="info" id="explainCommunicationstyle">
-			
-			</div>
+			<div class="info" id="explainCommunicationstyle"></div>
 			
 			<button class="createButton">Create circle</button>
 			
