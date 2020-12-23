@@ -1,0 +1,69 @@
+.chooseButtonsContainer {
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	margin-top: 50px;
+}
+
+.chooseButton { 
+	height: 35px;
+	position: relative;
+	display: inline-block;
+	width: 150px;
+	flex-shrink: 0;
+	margin: 5px;
+}
+
+.chooseButton label, .chooseButton input { 
+ 	display: block;
+	position: absolute;
+	top: 0; 
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.chooseButton input[type="radio"] {
+	opacity: 0;
+}
+
+.chooseButton input[type="radio"]:checked + label  { 
+	background-color: #7289DA;
+}
+
+.chooseButton label { 
+	cursor: pointer;
+	background-color: #99AAB5;
+	border-radius: 5px;
+	border: none;
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.moreInfo { 
+	font-size: 12px;
+	text-align: center;
+}
+
+.createButton {
+	width: 90vw;
+	height: 35px;
+	border-radius: 5px;
+	border: none;
+	background-color: #7289DA;
+	font-size: 12px;
+	color: #FFFFFF;
+	position: absolute;
+	left: 5%;
+	bottom: 70px;
+}
+
+.info { 
+	text-align: center;
+	font-size: 14px;
+	font-family: "Whitney Italic";
+}
+

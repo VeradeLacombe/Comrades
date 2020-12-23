@@ -1,0 +1,90 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>createCircle</title>
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/createCircle.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/jQueryMobile.js"></script>
+	<script type="text/javascript" src="js/createCircle.js"></script>
+	<script type="text/javascript" src="js/Circle.js"></script>
+</head>
+
+<body>
+	<div id="gridContainer_NoFooter">
+		<div id="gridHeader">
+			Create Circle
+			<i class="fa fa-ellipsis-v" style="font-size:24px"></i>
+		</div>
+		
+		<div id="gridMain">
+			
+			<div class="chooseButtonsContainer">
+				<div class="chooseButton">
+					<input type="radio" id="openButton" name="open or close" onChange="radioClick()"/>
+					<label for="openButton">Open circle</label>
+				</div>
+
+				<div class="chooseButton">
+					<input type="radio" id="closeButton" name="open or close" onChange="radioClick()"/>
+					<label for="closeButton">Close circle</label>
+				</div>
+			</div>
+			
+			<div class="info" id="explainCloseorOpen">
+			
+			</div>
+			
+			<div class="chooseButtonsContainer">
+				<div class="chooseButton">
+					<input type="radio" id="connectButton" name="connect or chitchat" onChange="radioClick()"/>
+					<label for="connectButton">Connect</label>
+				</div>
+
+				<div class="chooseButton">
+					<input type="radio" id="chitchatButton" name="connect or chitchat" onChange="radioClick()"/>
+					<label for="chitchatButton">Chitchat</label>
+				</div>
+				
+			</div>
+			
+			<div class="info" id="explainConnectorChitchat">
+			
+			</div>
+			
+			<div class="chooseButtonsContainer"> 
+				
+				<div class="chooseButton">
+					<input type="radio" id="audioButton" name="audio, text or video" onChange="radioClick()"/>
+					<label for="audioButton">Audiocall</label>
+				</div>
+				
+				<div class="chooseButton">
+					<input type="radio" id="textmessagesButton" name="audio, text or video" onChange="radioClick()"/>
+					<label for="textmessagesButton">Text message</label>
+				</div>
+				
+				<div class="chooseButton">
+					<input type="radio" id="videoButton" name="audio, text or video" onChange="radioClick()"/>
+					<label for="videoButton">Videocall</label>
+				</div>
+						
+			</div>
+			
+		<div class="info" id="explainCommunicationstyle">
+			
+			</div>
+			
+			<button class="createButton">Create circle</button>
+			
+		
+		</div>
+	
+	</div>
+	
+</body>
+</html>

@@ -38,10 +38,17 @@ input {
 	margin-top: 15px;
 }
 
-#gridContainer{ 
+#gridContainer_NoFooter {
+	grid-template-rows: 8vh auto;
+}
+
+#gridContainer {
+	grid-template-rows: 8vh auto 12vh;
+}
+
+#gridContainer, #gridContainer_NoFooter{ 
 	display: grid;
 	height: 100vh;
-	grid-template-rows: 8vh auto 12vh;
 }
 
 #gridHeader, #gridFooter {
@@ -82,12 +89,19 @@ input {
 	background: #7289DA; 
 	width: 10vh;
 	height: 10vh;
+	font-size: 2vh;
 }
 
-.gridFootercell, .circleButton { 
+.gridFootercell, .circleButton, .addButton{ 
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 2.5vh;
-	font-family: 'Whitney Italic'
+}
+
+.addButton { 
+	border-radius: 50%;
+	background: #99AAB5; 
+	width: 8vh;
+	height: 8vh;
+	font-size: 3vh;
 }
