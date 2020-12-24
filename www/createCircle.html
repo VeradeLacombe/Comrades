@@ -30,12 +30,12 @@
 			
 			<div class="chooseButtonsContainer">
 				<div class="chooseButton">
-					<input type="radio" id="openButton" name="open or close" onChange="radioClick()"/>
+					<input type="radio" id="openButton" name="open or close" value="open" onChange="radioClick()"/>
 					<label for="openButton">Open circle</label>
 				</div>
 
 				<div class="chooseButton">
-					<input type="radio" id="closeButton" name="open or close" onChange="radioClick()"/>
+					<input type="radio" id="closeButton" name="open or close" value="close" onChange="radioClick()"/>
 					<label for="closeButton">Close circle</label>
 				</div>
 			</div>
@@ -44,12 +44,12 @@
 			
 			<div class="chooseButtonsContainer">
 				<div class="chooseButton">
-					<input type="radio" id="connectButton" name="connect or chitchat" onChange="radioClick()"/>
+					<input type="radio" id="connectButton" name="connect or chitchat" value="connect" onChange="radioClick()"/>
 					<label for="connectButton">Connect</label>
 				</div>
 
 				<div class="chooseButton">
-					<input type="radio" id="chitchatButton" name="connect or chitchat" onChange="radioClick()"/>
+					<input type="radio" id="chitchatButton" name="connect or chitchat" value="chitchat" onChange="radioClick()"/>
 					<label for="chitchatButton">Chitchat</label>
 				</div>
 				
@@ -60,17 +60,17 @@
 			<div class="chooseButtonsContainer"> 
 				
 				<div class="chooseButton">
-					<input type="radio" id="textmessagesButton" name="audio, text or video" onChange="radioClick()"/>
+					<input type="radio" id="textmessagesButton" name="audio, text or video" value="textmessaging" onChange="radioClick()"/>
 					<label for="textmessagesButton">Text message</label>
 				</div>
 				
 				<div class="chooseButton">
-					<input type="radio" id="audioButton" name="audio, text or video" onChange="radioClick()"/>
+					<input type="radio" id="audioButton" name="audio, text or video" value="audio" onChange="radioClick()"/>
 					<label for="audioButton">Audiocall</label>
 				</div>
 				
 				<div class="chooseButton">
-					<input type="radio" id="videoButton" name="audio, text or video" onChange="radioClick()"/>
+					<input type="radio" id="videoButton" name="audio, text or video" value="video" onChange="radioClick()"/>
 					<label for="videoButton">Videocall</label>
 				</div>
 						
@@ -78,7 +78,7 @@
 			
 			<div class="info" id="explainCommunicationstyle"></div>
 			
-			<button class="createButton">Create circle</button>
+			<button class="createButton" onClick="createCircle()">Create circle</button>
 			
 		
 		</div>
