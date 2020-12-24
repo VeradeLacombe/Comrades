@@ -7,6 +7,13 @@ function radioClick() {
 	
 	updateRadioButton("#closeButton", "#explainCloseorOpen", "I want talk to my friends or my family!");
 	
+	if ($("#closeButton").is(":checked")){ 
+		$(".textInputContainer").show();
+	}
+	else { 
+		$(".textInputContainer").hide();
+	}
+	
 	updateRadioButton("#connectButton", "#explainConnectorChitchat", "I want to answer statements about serious topics<br>to connect on a deeper level");
 	
 	updateRadioButton("#chitchatButton", "#explainConnectorChitchat", "I want to answer lighthearted statements to connect in a fun way");
@@ -36,8 +43,14 @@ function createCircle() {
 	var connectOrChitchat = getRadioInput("connect or chitchat");
 	var audioTextOrVideo = getRadioInput("audio, text or video");
 	
-	if (openOrClose != undefined && connectOrChitchat != undefined && audioTextOrVideo != undefined && name != "") {
-		console.log({name, openOrClose, connectOrChitchat, audioTextOrVideo});
+	if (openOrClose != undefined && connectOrChitchat != undefined && audioTextOrVideo != undefined && name != "" || openOrClose == "open") {
+		if (openOrClose == "open"){
+			new OpenCircle ("New open circle", Math.floor(Math.random()*9)+2, undefined, connectOrChitchat).addToLocalStorage("OpenCircles");
+		}
+		
+		if (openOrClose == "close"){ 
+			new CloseCircle (name, 1, undefined, connectOrChitchat).addToLocalStorage("CloseCircles");
+		} 
 	}
 }
 

@@ -23,12 +23,7 @@
 		
 		<div id="gridMain">
 			
-			<div class="textInputContainer">
-				<label>Circle name<br></label>
-				<input type="text" id="circleName" onChange="radioClick()" required>
-			</div>
-			
-			<div class="chooseButtonsContainer">
+			<div class="chooseButtonsContainer" style="margin-top: 35px;">
 				<div class="chooseButton">
 					<input type="radio" id="openButton" name="open or close" value="open" onChange="radioClick()"/>
 					<label for="openButton" class="missingValue">Open circle</label>
@@ -76,7 +71,13 @@
 						
 			</div>
 			
+						
 			<div class="info" id="explainCommunicationstyle"></div>
+			
+			<div class="textInputContainer">
+				<label>Circle name<br></label>
+				<input type="text" id="circleName" onChange="radioClick()" required>
+			</div>
 			
 			<button class="createButton" onClick="createCircle()">Create circle</button>
 			

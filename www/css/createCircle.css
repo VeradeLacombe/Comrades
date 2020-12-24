@@ -46,8 +46,9 @@
 }
 
 .textInputContainer {
+	display: none;
 	margin-bottom: 25px;
-	margin-top: 25px;
+	margin-top: 35px;
 	border-color: #99AAB5;
 	border-style: solid;
 	border-radius: 5px;

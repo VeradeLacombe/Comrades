@@ -66,6 +66,6 @@ class CloseCircle extends Circle {
 	
 	constructor(name, memberCount, photo, mode) {
 		super(name, memberCount, photo, mode);
-		this.roomCode = Math.random().toString(36).substring(2,7);		
+		this.roomCode = Math.random().toString(36).substring(2,7);	
 	}
 }
