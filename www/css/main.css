@@ -122,3 +122,34 @@ input {
 	background-color: #23272A;
 	border: none;
 }
+
+.newCircle {
+	margin-top: 5px;
+	display: grid; 
+	background-color: #2C2F33;
+	grid-template-areas:
+        "image memberCount roomCode"
+        "image name name";
+	grid-template-columns: 70px auto 70px;
+	grid-template-rows: 35px 35px;
+	
+}
+
+.circlePhoto {
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	grid-area: image;
+	margin: auto;
+}
+
+.memberCount {
+	grid-area: memberCount;
+	font-size: 11px;
+	text-align: left;
+}
+
+.circleName { 
+	grid-area: name;
+	line-height: 35px;
+}
