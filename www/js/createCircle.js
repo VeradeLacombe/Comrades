@@ -1,4 +1,8 @@
 function radioClick() {
+	if ($("#circleName").val() != "") {
+		$("#circleName").parent().removeClass("missingValue");
+	}
+	
 	updateRadioButton("#openButton", "#explainCloseorOpen", "I want to meet new people and form a new community");
 	
 	updateRadioButton("#closeButton", "#explainCloseorOpen", "I want talk to my friends or my family!");
@@ -24,12 +28,16 @@ function updateRadioButton(buttonID, infoDivID, infoText) {
 }
 
 function createCircle() {
+	var name = $("#circleName").val();
+	if (name == "") {
+		animationBorder($("#circleName").parent());
+	}
 	var openOrClose = getRadioInput("open or close");
 	var connectOrChitchat = getRadioInput("connect or chitchat");
 	var audioTextOrVideo = getRadioInput("audio, text or video");
 	
-	if (openOrClose != undefined && connectOrChitchat != undefined && audioTextOrVideo != undefined) {
-		console.log({openOrClose, connectOrChitchat, audioTextOrVideo});
+	if (openOrClose != undefined && connectOrChitchat != undefined && audioTextOrVideo != undefined && name != "") {
+		console.log({name, openOrClose, connectOrChitchat, audioTextOrVideo});
 	}
 }
 
@@ -37,10 +45,15 @@ function getRadioInput(radioName) {
 	var value = $('input[name = "' + radioName + '"]:checked').val();
 	if (value == undefined) {
 		var labels = $('input[name = "' + radioName + '"]').parent().parent().find("label");
-		labels.removeClass("missingValue");
-		void labels.width();
-		labels.addClass("missingValue");
-		labels.css("border-style", "solid");
+		animationBorder(labels);
 	}
 	return value;
+}
+
+function animationBorder(element) {
+	element.removeClass("missingValue");
+	void element.width();
+	element.addClass("missingValue");
+	element.css("border-style", "solid");
+	
 }

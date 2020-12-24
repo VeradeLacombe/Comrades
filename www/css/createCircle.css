@@ -41,21 +41,51 @@
 	align-items: center;
 }
 
+.textInputContainer, .textInputContainer input {
+	background-color: #2C2F33;
+}
+
+.textInputContainer {
+	margin-bottom: 25px;
+	margin-top: 25px;
+	border-color: #99AAB5;
+	border-style: solid;
+	border-radius: 5px;
+	border-width: 2px;
+	padding: 4px;
+}
+
 .missingValue {
 	border-color: crimson;
 	border-style: none;
-	border-width: medium;
+	border-width: 4px;
 	animation-name: missedValue;
 	animation-duration: 0.4s;
 	animation-timing-function: ease;
+	padding: 2px;
 }
 
 @keyframes missedValue {
-	0% {border-width: 0px;}
-	25% {border-width: 0px;}
-	50% {border-width: thick;}
-	75% {border-width: thick;}
-	100% {border-width: medium;}
+	0% {
+		border-width: 0px;
+		padding: 6px;
+	}
+	25% {
+		border-width: 0px;
+		padding: 6px;
+	}
+	50% {
+		border-width: 6px;
+		padding: 0px;
+	}
+	75% {
+		border-width: 6px;
+		padding: 0px;
+	}
+	100% {
+		border-width: 4px;
+		padding: 2px;
+	}
 }
 
 .moreInfo { 
@@ -82,13 +112,3 @@
 	font-family: "Whitney Italic";
 	min-height: 45px;
 }
-
-.textInputContainer, .textInputContainer input {
-	background-color: #2C2F33;
-}
-
-.textInputContainer {
-	margin-bottom: 25px;
-	margin-top: 25px;
-}
-
