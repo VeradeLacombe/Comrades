@@ -36,7 +36,11 @@ function createCircle() {
 function getRadioInput(radioName) {
 	var value = $('input[name = "' + radioName + '"]:checked').val();
 	if (value == undefined) {
-		$('input[name = "' + radioName + '"]').parent().parent().find("label").css("border-style", "solid");
+		var labels = $('input[name = "' + radioName + '"]').parent().parent().find("label");
+		labels.removeClass("missingValue");
+		void labels.width();
+		labels.addClass("missingValue");
+		labels.css("border-style", "solid");
 	}
 	return value;
 }

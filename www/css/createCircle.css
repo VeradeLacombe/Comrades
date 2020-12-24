@@ -39,9 +39,23 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.missingValue {
 	border-color: crimson;
 	border-style: none;
 	border-width: medium;
+	animation-name: missedValue;
+	animation-duration: 0.4s;
+	animation-timing-function: ease;
+}
+
+@keyframes missedValue {
+	0% {border-width: 0px;}
+	25% {border-width: 0px;}
+	50% {border-width: thick;}
+	75% {border-width: thick;}
+	100% {border-width: medium;}
 }
 
 .moreInfo { 
