@@ -45,11 +45,11 @@ function createCircle() {
 	
 	if (openOrClose != undefined && connectOrChitchat != undefined && audioTextOrVideo != undefined && name != "" || openOrClose == "open") {
 		if (openOrClose == "open"){
-			new OpenCircle ("New open circle", Math.floor(Math.random()*9)+2, undefined, connectOrChitchat).addToLocalStorage("OpenCircles");
+			new OpenCircle ("New open circle", Math.floor(Math.random()*9)+2, connectOrChitchat).addToLocalStorage("OpenCircles");
 		}
 		
 		if (openOrClose == "close"){ 
-			new CloseCircle (name, 1, undefined, connectOrChitchat).addToLocalStorage("CloseCircles");
+			new CloseCircle (name, 1, connectOrChitchat).addToLocalStorage("CloseCircles");
 		} 
 	}
 }

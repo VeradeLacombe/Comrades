@@ -153,3 +153,11 @@ input {
 	grid-area: name;
 	line-height: 35px;
 }
+
+.code {
+	grid-area: roomCode;
+	font-size: 11px;
+	text-align: right;
+	margin-right: 15px;
+
+}
