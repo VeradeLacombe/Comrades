@@ -1,3 +1,7 @@
 body { 
 	background-color: #363940;
 }
+
+#gridContainer {
+	grid-template-rows: 8vh auto 90px 12vh;
+}

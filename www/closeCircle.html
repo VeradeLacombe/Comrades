@@ -15,14 +15,24 @@
 </head>
 
 <body>
-	<div id="gridContainer">
+	<div id="gridContainer_AddButtonPopUp">
 		<div id="gridHeader">
 			Close Circle
 			<i class="fa fa-ellipsis-v" style="font-size:24px"></i>
 		
 		</div>
 		
-		<div id="gridMain"></div>
+		<div id="gridMain">
+			
+		</div>
+		
+		<div class="addPopUp">
+			<div class="fillRoomCode">
+				<input type="text" id="roomCode" placeholder="Enter a circle code" required>
+				<button class="Button_Blue Button" onClick="">Join Circle</button>
+			</div>
+			<button class="Button_Blue createCircleButton" onClick="window.location.href= 'createCircle.html';">Create a circle</button>
+		</div>
 		
 		<div id="gridFooter">
 			<div class="gridFootercell">
@@ -30,8 +40,10 @@
 			</div>
 			
 			<div class="gridFootercell">
-			<div class="addButton" onClick= "window.location.href= 'createCircle.html';">+</div>
+				<div class="addButton" onClick="plusButtonPress()">+</div>
 			</div>
+			
+			
 			
 			<div class="gridFootercell">
 				<div class="circleButton">Close</div>

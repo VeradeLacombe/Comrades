@@ -16,3 +16,13 @@ function UpdateCircleList() {
 $(document).ready(function() {
 	UpdateCircleList();
 });
+
+function plusButtonPress() {
+	var container = document.getElementById("gridContainer_AddButtonPopUp");
+	if (container.style.gridTemplateRows === "8vh auto 90px 12vh") {
+		container.style.gridTemplateRows = "8vh auto 0vh 12vh";
+	} else {
+		container.style.gridTemplateRows = "8vh auto 90px 12vh";
+	}
+}
+

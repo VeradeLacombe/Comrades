@@ -48,7 +48,49 @@
 }
 
 .textArea {
+	height: 30px;
+	resize: none;
+	width: 88vw;
+	margin-left: 5px;
+	border-radius: 5px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+.sendButton {
+	border-radius: 50%;
+	height: 35px;
+	width: 35px;
+	background-color: #7289DA;
+	border: none;
+	margin: 5px;
+}
+
+.material-icons { 
+	color: #FFFFFF;
+}
+
+#gridContainer {
+	grid-template-rows: 8vh auto 45px;
 	
-	
-	
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #7289DA; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #7289DA; 
 }
