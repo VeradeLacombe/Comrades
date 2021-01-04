@@ -1,0 +1,54 @@
+.circlePhoto2 {
+	border-radius: 50%;
+	height: 42px;
+	width: 42px;
+}
+
+.circleName2 {
+	margin-left: 10px;
+	font-size: 20px;
+}
+
+.textBuble{
+	background-color: #99AAB5;
+	display: inline-block;
+	max-width: 90vw;
+	min-height: 45px;
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 10px;
+}
+
+.senderName {
+	color: purple;
+	font-family: "Whitney Bold";
+	font-size: 15px;
+	margin-left: 5px;
+}
+
+.message {
+	color: #23272A;
+	font-size: 14px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.textBubleYou{
+	background-color: #7289DA;
+	display: inline-block;
+	max-width: 90vw;
+	min-height: 35px;
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-right: 10px;
+	float: right;
+	color: #23272A;
+	font-size: 14px;
+	padding: 5px;
+}
+
+.textArea {
+	
+	
+	
+}
