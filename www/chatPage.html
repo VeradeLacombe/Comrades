@@ -1,15 +1,18 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>chatPage</title>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<meta charset="utf-8">
+	<title>chatPage</title>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<link href="css/main.css" rel="stylesheet" type="text/css">
-<link href="css/chatPage.css" rel="stylesheet" type="text/css">
-	
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<link href="css/main.css" rel="stylesheet" type="text/css">
+	<link href="css/chatPage.css" rel="stylesheet" type="text/css">
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script type="text/javascript" src="js/Circle.js"></script>
+	<script type="text/javascript" src="js/chatPage.js"></script>
+	<script type="text/javascript" src="js/jQuery.js"></script>
 </head>
 
 <body>
@@ -30,26 +33,46 @@
 						Vera
 					</div>
 
-					<div class="message">Hi I'm Vera, nice to meat you all! </div>
+					<div class="message">Hi I'm Vera, nice to meat you all!</div>
 
 				</div>
 			</div>
+			<div class="textBubleYouContainer">
+				<div class="textBubleYou">
+					Hello Vera how are you doing?
+				</div>
+			</div>
 			
-		<div>			
-			<div class="textBubleYou">
-				Hello Vera how are you doing?
+			<div class="statementContainer">
+				<div class="gameMode">Chitchat</div>
+				<div class="statement">"What is the clumsiest thing you've ever done?"</div>
 			
 			</div>
-		</div>
-		
+			
+			<div class="textBubleAnswer">
+					<div class="senderName">
+						Vera
+					</div>
+
+					<div class="message">I farted on  first date</div>
+
+				</div>
+			
+			<div class="textBubleYouContainer">
+				<div class="textBubleYou">Falling on stage</div>
+			</div>
+			
 			
 		</div>
 		
 	
 		<div id="gridFooter">
-			<textarea class="textArea" placeholder="Type your message"></textarea>
 			
-			<button class="sendButton"><i class="material-icons" style="font-size:22px">send</i></button>
+			<button class="questionButton" onClick=""><i class="fas fa-question"></i></button>
+			
+			<textarea id="textInput" class="textArea" placeholder="Type your message"></textarea>
+			
+			<button class="sendButton" onClick="sendMessage();"><i class="material-icons">send</i></button>
 		
 		</div>
 		

@@ -1,3 +1,43 @@
+class Message {
+	
+	constructor(message, sender) {
+		this.sender = sender;
+		this.message = message;
+	}
+	
+	createMessageItem() {
+		
+		var div1 = document.createElement("div");
+		
+		var div2 = document.createElement("div");
+		div1.appendChild(div2);
+		
+		if (sender == undefined) {
+			// Sent you
+			div1.className = "textBubleYouContainer";
+			div2.className = "textBubleYou";
+			div2.innerHTML = this.message;
+			
+		}
+		else {
+			// Sent by other user
+			div2.className = "textBuble";
+			
+			var div3 = document.createElement("div");
+			div2.appendChild(div3);
+			div3.className = "senderName";
+			div3.innerHTML = this.sender;
+			
+			var div4 = document.createElement("div");
+			div2.appendChild(div4);
+			div4.className = "message";
+			div4.innerHTML = this.message;
+		}
+		
+		return div1;
+	}
+}
+
 class Circle { 
 
 	constructor(name, memberCount, mode) {
@@ -6,6 +46,8 @@ class Circle {
 		this.memberCount = memberCount;
 		this.photo = "img/Avatar.png";
 		this.mode = mode;
+		this.startTime = new Date();
+		this.messages = [];
 	}
 	
 	addToLocalStorage(storageName) {
@@ -26,6 +68,58 @@ class Circle {
 		}
 	}
 	
+	updateLocalStorage() {
+		if (this.type == "OpenCircle") {
+			this.deleteFromLocalStorage("OpenCircles");
+			this.addToLocalStorage("OpenCircles");
+		}
+		else if (this.type == "CloseCircle") {
+			this.deleteFromLocalStorage("CloseCircles");
+			this.addToLocalStorage("CloseCircles");
+		}
+	}
+	
+	deleteFromLocalStorage(storageName) {
+		// If the localStorage list does not exist
+		if (localStorage.getItem(storageName) == undefined) {
+			// The circle is not in the list, so we don't need to delete it
+		}
+		else {
+			// Retrieve the localStorage list
+			var list = JSON.parse(localStorage.getItem(storageName));
+			
+			// For each circle in the list
+			for (var i = 0; i < list.length; i++) {
+				// Get that circle
+				var otherCircle = Circle.unserialize(list[i]);
+				
+				// If that circle is equal to this circle
+				if (this.equals(otherCircle)) {
+					// Then delete the circle from the list
+					list.splice(i, 1);
+					i--;
+				}
+			}
+			
+			// Update the localStorage
+			localStorage.setItem(storageName, JSON.stringify(list));
+		}
+	}
+	
+	equals(other) {
+		console.log(this.startTime);
+		console.log(other.startTime);
+		return this.startTime == other.startTime;
+	}
+	
+	static getCurrent() {
+		return Circle.unserialize(localStorage.currentCircle);;
+	}
+	
+	setCurrent() {
+		localStorage.currentCircle = JSON.stringify(this);
+	}
+	
 	// Transform the string back into a Circle object
 	static unserialize(data) {
 		data = JSON.parse(data);
@@ -37,7 +131,6 @@ class Circle {
 				break;
 			case "OpenCircle":
 				circle = new OpenCircle;
-				circle.startTime = data.startTime;
 				break;
 			case "CloseCircle":
 				circle = new CloseCircle;
@@ -50,6 +143,8 @@ class Circle {
 		circle.memberCount = data.memberCount;
 		circle.photo = data.photo;
 		circle.mode = data.mode;
+		circle.startTime = data.startTime;
+		circle.messages = data.messages;
 		return circle;
 	}
 	
@@ -76,6 +171,12 @@ class Circle {
 		nameContainer.innerHTML = this.name;
 		item.appendChild(nameContainer);
 		
+		// Make item clickable
+		item.circle = this;
+		item.onclick = function() {
+			this.circle.setCurrent();
+			window.location.href = 'chatPage.html';
+		}
 		
 		return item;
 	}
@@ -84,8 +185,7 @@ class Circle {
 class OpenCircle extends Circle {
 	
 	constructor(name, memberCount, mode) {
-		super(name, memberCount, mode);
-		this.startTime = new Date();		
+		super(name, memberCount, mode);	
 	}
 }
 

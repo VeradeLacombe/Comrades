@@ -41,17 +41,24 @@
 	border-radius: 5px;
 	margin-top: 30px;
 	margin-right: 10px;
-	float: right;
 	color: #23272A;
 	font-size: 14px;
 	padding: 5px;
 }
 
+.textBubleYouContainer { 
+	display: flex;
+	justify-content: flex-end;
+}
+
+#gridFooter {
+	display: flex;
+}
+
 .textArea {
 	height: 30px;
 	resize: none;
-	width: 88vw;
-	margin-left: 5px;
+	flex-grow: 1;
 	border-radius: 5px;
 	margin-top: 5px;
 	margin-bottom: 5px;
@@ -59,15 +66,38 @@
 
 .sendButton {
 	border-radius: 50%;
-	height: 35px;
-	width: 35px;
+	height: 30px;
+	width: 30px;
 	background-color: #7289DA;
 	border: none;
-	margin: 5px;
+	margin: 5px 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.questionButton {
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	background-color: #7289DA;
+	border: none;
+	margin: 5px 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.fa-question {
+	margin: 0;
+	font-size: 18px;
+
 }
 
 .material-icons { 
 	color: #FFFFFF;
+	font-size: 20px;
 }
 
 #gridContainer {
@@ -93,4 +123,38 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #7289DA; 
+}
+
+.statementContainer {
+	background-color: #FFFFFF;
+	width: 95vw;
+	height: 50px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 5px;
+	box-shadow: 3px 3px 5px #7289DA;;
+}
+
+.gameMode { 
+	color: #7289DA;
+	text-align: center;
+	font-size: 10px;
+	padding-bottom: 1px;
+	padding-top: 5px;
+
+}
+
+.statement { 
+	color: #2C2F33;
+	text-align: center;
+	padding-bottom: 5px;
+	font-family: "Whitney Italic";
+
+}
+
+.textBubleAnswer { 
+
 }

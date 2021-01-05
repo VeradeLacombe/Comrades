@@ -45,11 +45,16 @@ function createCircle() {
 	
 	if (openOrClose != undefined && connectOrChitchat != undefined && audioTextOrVideo != undefined && name != "" || openOrClose == "open") {
 		if (openOrClose == "open"){
-			new OpenCircle ("New open circle", Math.floor(Math.random()*9)+2, connectOrChitchat).addToLocalStorage("OpenCircles");
+			var openCircle = new OpenCircle ("New open circle", Math.floor(Math.random()*9)+2, connectOrChitchat);
+			openCircle.addToLocalStorage("OpenCircles");
+			openCircle.setCurrent();
 		}
 		
 		if (openOrClose == "close"){ 
-			new CloseCircle (name, 1, connectOrChitchat).addToLocalStorage("CloseCircles");
+			var closeCircle = new CloseCircle (name, 1, connectOrChitchat);
+			closeCircle.addToLocalStorage("CloseCircles");
+			closeCircle.setCurrent();
+			window.location.href = 'chatPage.html';
 		} 
 	}
 }
