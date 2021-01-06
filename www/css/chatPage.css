@@ -135,7 +135,7 @@
 	margin-left: auto;
 	margin-right: auto;
 	border-radius: 5px;
-	box-shadow: 3px 3px 5px #7289DA;;
+	box-shadow: 3px 3px 5px #7289DA;
 }
 
 .gameMode { 
@@ -156,5 +156,58 @@
 }
 
 .textBubleAnswer { 
+	background-color: #99AAB5;
+	display: inline-block;
+	max-width: 90vw;
+	min-height: 45px;
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-left: 10px;
+	box-shadow: 3px 3px 5px white;
+}
 
+.textBubleYouAnswer {
+	background-color: #7289DA;
+	display: inline-block;
+	max-width: 90vw;
+	min-height: 35px;
+	border-radius: 5px;
+	margin-top: 30px;
+	margin-right: 10px;
+	color: #23272A;
+	font-size: 14px;
+	padding: 5px;
+	box-shadow: 3px 3px 5px white;
+}
+
+.voteCount {
+	background-color: white;
+	border-radius: 50%;
+	height: 22px;
+	width: 22px;
+	color: #7289DA;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'Whitney Semibold';
+	float: right;
+	position: relative;
+	top: -6px;
+	right: -11px;
+	box-shadow: 1px 1px 3px white;
+}
+
+.voteCountYou { 
+	background-color: white;
+	border-radius: 50%;
+	height: 22px;
+	width: 22px;
+	color: #7289DA;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'Whitney Semibold';
+	float: left;
+	position: relative;
+	top: -10px;
+	left: -11px;
+	box-shadow: 1px 1px 3px white;
 }
