@@ -1,8 +1,10 @@
 class Message {
 	
-	constructor(message, sender) {
+	constructor(message, sender, voteCount, isAQuestion) {
 		this.sender = sender;
 		this.message = message;
+		this.voteCount = voteCount;
+		this.isAQuestion = isAQuestion;
 	}
 	
 	createMessageItem() {
@@ -12,16 +14,46 @@ class Message {
 		var div2 = document.createElement("div");
 		div1.appendChild(div2);
 		
-		if (this.sender == undefined) {
-			// Sent you
-			div1.className = "textBubleYouContainer";
-			div2.className = "textBubleYou";
-			div2.innerHTML = this.message;
+		if (this.isAQuestion) {
+			// Question
+			div1.className = "statementContainer";
+			div2.className = "gameMode";
+			div2.innerHTML = Circle.getCurrent().mode.charAt(0).toUpperCase() + Circle.getCurrent().mode.slice(1);
 			
+			var div3 = document.createElement("div");
+			div3.className = "statement";
+			div3.innerHTML = '"' + this.message + '"';
+			div1.appendChild(div3);
+		}
+		else if (this.sender == undefined) {
+			// Sent by you
+			if (this.voteCount == undefined) {
+				div2.className = "textBubleYou";
+			}
+			else {
+				div2.className = "textBubleYouAnswer";
+				
+				var voteDiv = document.createElement("div");
+				voteDiv.className = "voteCountYou";
+				voteDiv.innerHTML = this.voteCount;
+				div2.appendChild(voteDiv);
+			}
+				
+			div1.className = "textBubleYouContainer";
+			div2.innerHTML += this.message;
 		}
 		else {
 			// Sent by other user
-			div2.className = "textBuble";
+			if (this.voteCount == undefined) {
+				div2.className = "textBuble";
+			}
+			else {
+				div2.className = "textBubleAnswer";
+				var voteDiv  = document.createElement("div");
+				voteDiv.className = "voteCount";
+				voteDiv.innerHTML = this.voteCount;
+				div2.appendChild(voteDiv);
+			}
 			
 			var div3 = document.createElement("div");
 			div2.appendChild(div3);
@@ -70,7 +102,7 @@ class Circle {
 			var list = JSON.parse(localStorage.getItem(storageName));
 			
 			// Add this circle to the list
-			list.push(JSON.stringify(this));
+			list.unshift(JSON.stringify(this));
 			
 			// Update the localStorage
 			localStorage.setItem(storageName, JSON.stringify(list));
