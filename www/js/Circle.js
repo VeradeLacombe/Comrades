@@ -48,6 +48,7 @@ class Circle {
 		this.mode = mode;
 		this.startTime = new Date();
 		this.messages = [];
+		this.time = 24;
 	}
 	
 	addToLocalStorage(storageName) {
@@ -162,7 +163,7 @@ class Circle {
 		// Create member count element
 		var memberCountContainer = document.createElement("p");
 		memberCountContainer.className = "memberCount";
-		memberCountContainer.innerHTML = this.memberCount;
+		memberCountContainer.innerHTML = this.memberCount + "/10";
 		item.appendChild(memberCountContainer);
 		
 		// Create name element
@@ -186,6 +187,18 @@ class OpenCircle extends Circle {
 	
 	constructor(name, memberCount, mode) {
 		super(name, memberCount, mode);	
+	}
+	
+	createListItem() {
+		var item = super.createListItem();
+		
+		// Create roomcode element
+		var timeContainer = document.createElement("p");
+		timeContainer.className = "code";
+		timeContainer.innerHTML = this.time + "h left";
+		item.appendChild(timeContainer);
+		
+		return item;
 	}
 }
 

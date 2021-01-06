@@ -18,7 +18,9 @@ function sendMessage() {
 $(document).ready(function() {
 	updatePage();
 	
-	if (Circle.getCurrent().type == "OpenCircle") {
+	var currentCircle = Circle.getCurrent();
+	
+	if (currentCircle.type == "OpenCircle") {
 		$("#backButton").click(function() {
 			window.location.href = "openCircle.html";
 		});
@@ -28,4 +30,7 @@ $(document).ready(function() {
 			window.location.href = "closeCircle.html";
 		});
 	}
+	
+	$("#title").html(currentCircle.name);
+	$("circlePhoto").attr("src", currentCircle.photo);
 });
