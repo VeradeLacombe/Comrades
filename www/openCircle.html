@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>closeCircle</title>
+<link href="css/main.css" rel="stylesheet" type="text/css">
+<link href="css/closeCircle.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	
+	<script type="text/javascript" src="js/jQuery.js"></script>
+	<script type="text/javascript" src="js/jQueryMobile.js"></script>
+	<script type="text/javascript" src="js/Circle.js"></script>
+	<script type="text/javascript" src="js/openCircle.js"></script>
+</head>
+
+<body>
+	<div id="gridContainer_AddButtonPopUp">
+		<div id="gridHeader">
+			Open Circle
+			<i class="fa fa-ellipsis-v" style="font-size:24px"></i>
+		
+		</div>
+		
+		<div id="gridMain">
+			
+		</div>
+		
+		<div class="addPopUp">
+			<div class="fillRoomCode">
+				<input type="text" id="roomCode" placeholder="Enter a circle code" required>
+				<button class="Button_Blue Button" onClick="">Join Circle</button>
+			</div>
+			<button class="Button_Blue createCircleButton" onClick="window.location.href= 'createCircle.html';">Create a circle</button>
+		</div>
+		
+		<div id="gridFooter">
+			<div class="gridFootercell">
+				<div class="circleButton" onClick="window.location.href= 'openCircle.html';">Open</div> 
+			</div>
+			
+			<div class="gridFootercell">
+				<div class="addButton" onClick="plusButtonPress()">+</div>
+			</div>
+			
+			
+			
+			<div class="gridFootercell">
+				<div class="circleButton" onClick="window.location.href= 'closeCircle.html';">Close</div>
+			
+			</div>
+			
+
+		
+		</div>
+	
+	
+	</div>
+</body>
+</html>

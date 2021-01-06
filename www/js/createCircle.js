@@ -48,6 +48,7 @@ function createCircle() {
 			var openCircle = new OpenCircle ("New open circle", Math.floor(Math.random()*9)+2, connectOrChitchat);
 			openCircle.addToLocalStorage("OpenCircles");
 			openCircle.setCurrent();
+			window.location.href = 'chatPage.html';
 		}
 		
 		if (openOrClose == "close"){ 
