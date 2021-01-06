@@ -1,7 +1,11 @@
+#gridHeader {
+	padding-left: 10px;
+}
+
 .circlePhoto2 {
 	border-radius: 50%;
-	height: 42px;
-	width: 42px;
+	height: 35px;
+	width: 35px;
 }
 
 .circleName2 {
@@ -210,4 +214,10 @@
 	top: -10px;
 	left: -11px;
 	box-shadow: 1px 1px 3px white;
+}
+
+.fa-arrow-left {
+	margin: 0;
+	margin-right: 10px;
+	font-size: 18px;
 }

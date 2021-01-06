@@ -17,4 +17,15 @@ function sendMessage() {
 
 $(document).ready(function() {
 	updatePage();
+	
+	if (Circle.getCurrent().type == "OpenCircle") {
+		$("#backButton").click(function() {
+			window.location.href = "openCircle.html";
+		});
+	}
+	else {
+		$("#backButton").click(function() {
+			window.location.href = "closeCircle.html";
+		});
+	}
 });
