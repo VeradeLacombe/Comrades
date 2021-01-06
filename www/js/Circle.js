@@ -12,7 +12,7 @@ class Message {
 		var div2 = document.createElement("div");
 		div1.appendChild(div2);
 		
-		if (sender == undefined) {
+		if (this.sender == undefined) {
 			// Sent you
 			div1.className = "textBubleYouContainer";
 			div2.className = "textBubleYou";
@@ -35,6 +35,14 @@ class Message {
 		}
 		
 		return div1;
+	}
+	
+	static unserialize(messages) {
+		messages.forEach(function(message, index) {
+			this[index] = new Message(message.message, message.sender);
+		}, messages);
+		
+		return messages;
 	}
 }
 
@@ -108,8 +116,6 @@ class Circle {
 	}
 	
 	equals(other) {
-		console.log(this.startTime);
-		console.log(other.startTime);
 		return this.startTime == other.startTime;
 	}
 	
@@ -145,7 +151,7 @@ class Circle {
 		circle.photo = data.photo;
 		circle.mode = data.mode;
 		circle.startTime = data.startTime;
-		circle.messages = data.messages;
+		circle.messages = Message.unserialize(data.messages);
 		return circle;
 	}
 	

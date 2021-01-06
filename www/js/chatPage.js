@@ -1,5 +1,13 @@
 function updatePage() {
+	// Get and clear the message container
+	var messageContainer = document.getElementById("gridMain");
+	messageContainer.innerHTML = '';
 	
+	// Retrieve the message list from localStorage
+	var currentCircle = Circle.getCurrent();
+	for (var message of currentCircle.messages) {
+		messageContainer.appendChild(message.createMessageItem());
+	}
 }
 
 function sendMessage() {
