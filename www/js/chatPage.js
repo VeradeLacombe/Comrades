@@ -21,6 +21,11 @@ function sendMessage() {
 	circle.updateLocalStorage();
 	circle.setCurrent();
 	updatePage();
+	circle.playScript(document.getElementById("gridMain"), true);
+}
+
+function LeftButtonClick() {
+	Circle.getCurrent().playQuestion(document.getElementById("gridMain"));
 }
 
 $(document).ready(function() {
@@ -41,4 +46,6 @@ $(document).ready(function() {
 	
 	$("#title").html(currentCircle.name);
 	$("circlePhoto").attr("src", currentCircle.photo);
+	
+	currentCircle.playScript(document.getElementById("gridMain"));
 });

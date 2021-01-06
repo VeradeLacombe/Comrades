@@ -1,10 +1,11 @@
 class Message {
 	
-	constructor(message, sender, voteCount, isAQuestion) {
+	constructor(message, sender, voteCount, isAQuestion, waitForYou) {
 		this.sender = sender;
 		this.message = message;
 		this.voteCount = voteCount;
 		this.isAQuestion = isAQuestion;
+		this.waitForYou = waitForYou;
 	}
 	
 	createMessageItem() {
@@ -71,7 +72,7 @@ class Message {
 	
 	static unserialize(messages) {
 		messages.forEach(function(message, index) {
-			this[index] = new Message(message.message, message.sender);
+			this[index] = new Message(message.message, message.sender, message.voteCount, message.isAQuestion, message.waitForYou);
 		}, messages);
 		
 		return messages;
@@ -89,6 +90,13 @@ class Circle {
 		this.startTime = new Date();
 		this.messages = [];
 		this.time = 24;
+		this.messageScript = [
+			new Message("Hello Vera", "Stanley"),
+			new Message("Welcome to our Circle", "Lisa", undefined, false, true),
+			new Message("Are you happy right now?", undefined, undefined, true),
+			new Message("I am very happy", "Lisa", 0),
+			new Message("Happyness is for suckers", "Stanley", 0)
+		];
 	}
 	
 	addToLocalStorage(storageName) {
@@ -183,7 +191,9 @@ class Circle {
 		circle.photo = data.photo;
 		circle.mode = data.mode;
 		circle.startTime = data.startTime;
+		circle.time = data.time;
 		circle.messages = Message.unserialize(data.messages);
+		circle.messageScript = Message.unserialize(data.messageScript);
 		return circle;
 	}
 	
@@ -218,6 +228,32 @@ class Circle {
 		}
 		
 		return item;
+	}
+	
+	playScript(messageContainer, youSentMessage) {
+		setTimeout(function(circle, messageContainer, youSentMessage) {
+			if (circle.messageScript.length == 0
+				|| circle.messageScript[0].isAQuestion
+				|| (circle.messageScript[0].waitForYou && !youSentMessage)) {
+				return;
+			}
+			var message = circle.messageScript.shift();
+			circle.messages.push(message);
+			circle.updateLocalStorage();
+			circle.setCurrent();
+			messageContainer.appendChild(message.createMessageItem());
+			circle.playScript(messageContainer);
+		}, 2000, this, messageContainer, youSentMessage);
+	}
+	
+	playQuestion(messageContainer) {
+		if (this.messageScript.length == 0 || !this.messageScript[0].isAQuestion) return;
+		var message = this.messageScript.shift();
+		this.messages.push(message);
+		this.updateLocalStorage();
+		this.setCurrent();
+		messageContainer.appendChild(message.createMessageItem());
+		this.playScript(messageContainer);
 	}
 }
 
