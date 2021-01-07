@@ -35,9 +35,9 @@
 	
 		<div id="gridFooter">
 			
-			<button class="questionButton" onClick="LeftButtonClick();"><i class="fas fa-question"></i></button>
+			<button id="LeftButton" class="questionButton" onClick="LeftButtonClick();"><i class="fas fa-question"></i></button>
 			
-			<textarea id="textInput" class="textArea" placeholder="Type your message"></textarea>
+			<textarea id="textInput" class="textArea" onInput="Typing();" placeholder="Type your message"></textarea>
 			
 			<button class="sendButton" onClick="sendMessage();"><i class="material-icons">send</i></button>
 		

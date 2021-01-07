@@ -1,3 +1,5 @@
+var questionIsUnanswered = false;
+
 function updatePage() {
 	// Get and clear the message container
 	var messageContainer = document.getElementById("gridMain");
@@ -25,7 +27,37 @@ function sendMessage() {
 }
 
 function LeftButtonClick() {
-	Circle.getCurrent().playQuestion(document.getElementById("gridMain"));
+	var textInput = document.getElementById("textInput");
+	if (questionIsUnanswered && textInput.value != "") {
+		var text = textInput.value;
+		textInput.value = "";
+
+		var message = new Message(text, undefined, 0);
+		var circle = Circle.getCurrent();
+		circle.messages.push(message);
+		circle.updateLocalStorage();
+		circle.setCurrent();
+		updatePage();
+		circle.playScript(document.getElementById("gridMain"), true);
+		
+		document.getElementById("LeftButton").innerHTML = '<i class="fas fa-question"></i>';
+		
+		questionIsUnanswered = false;
+	}
+	else {
+		Circle.getCurrent().playQuestion(document.getElementById("gridMain"));
+		questionIsUnanswered = true;
+	}
+}
+
+function Typing() {
+	var textInput = document.getElementById("textInput");
+	if (questionIsUnanswered && textInput.value != "") {
+		document.getElementById("LeftButton").innerHTML = '<i class="fas fa-bullhorn"></i>';
+	}
+	else {
+		document.getElementById("LeftButton").innerHTML = '<i class="fas fa-question"></i>';
+	}
 }
 
 $(document).ready(function() {
