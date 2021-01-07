@@ -54,6 +54,12 @@ class Message {
 				voteDiv.className = "voteCount";
 				voteDiv.innerHTML = this.voteCount;
 				div2.appendChild(voteDiv);
+				div2.message = this;
+				div2.onclick = function() {
+					var voteDiv = this.getElementsByClassName("voteCount")[0];
+					voteDiv.innerHTML = parseInt(voteDiv.innerHTML) + 1;
+					this.style.boxShadow = "5px 5px 5px #7289DA"
+				};
 			}
 			
 			var div3 = document.createElement("div");
