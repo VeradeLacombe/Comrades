@@ -102,8 +102,7 @@ class Circle {
 		this.messageScript = [
 			new Message("Hi everyone! How are you all doing? 👋", "Just_Stanley"),
 			new Message("Heyy I'm Emma. I'm fine. You?", "EmmaG", "#ff195e"),
-			new Message("Hii, shall we start a question?", "Lisadl_", "#1d3dde"),
-			new Message("I'm Lisa by the way 😊", "Lisadl_", "#1d3dde", undefined, undefined, true),
+			new Message("Hii I'm Lisa 😊. Let's start a question!", "Lisadl_", "#1d3dde", undefined, undefined, true),
 			new Message("Why do we dream?", undefined, undefined, undefined, true),
 			new Message("I think because we process what happened during the day", "Lisadl_", "#1d3dde", 0),
 			new Message("I don't dream much honestly 🤷‍♂️", "Just_Stanley", undefined, 0, false, true),
@@ -261,7 +260,7 @@ class Circle {
 			circle.setCurrent();
 			messageContainer.appendChild(message.createMessageItem());
 			circle.playScript(messageContainer);
-		}, 2000, this, messageContainer, youSentMessage);
+		}, 1000, this, messageContainer, youSentMessage);
 	}
 	
 	playQuestion(messageContainer) {
