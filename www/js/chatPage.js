@@ -98,7 +98,7 @@ $(document).ready(function() {
 	}
 	
 	$("#title").html(currentCircle.name);
-	$("circlePhoto").attr("src", currentCircle.photo);
+	$("#circlePhoto").attr("src", currentCircle.photo);
 	
 	currentCircle.playScript(document.getElementById("gridMain"));
 });

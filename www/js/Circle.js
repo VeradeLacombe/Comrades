@@ -100,19 +100,24 @@ class Circle {
 		this.time = 24;
 		// new Message(text, verzender/ question=undefined, color, votecount / undefined, isAQuestion = true/false, waitForYou=true/false)
 		this.messageScript = [
-			new Message("Hi everyone! How are you all doing?", "Just_Stanley"),
+			new Message("Hi everyone! How are you all doing? 👋", "Just_Stanley"),
 			new Message("Heyy I'm Emma. I'm fine. You?", "EmmaG", "#ff195e"),
 			new Message("Hii, shall we start a question?", "Lisadl_", "#1d3dde"),
-			new Message("I'm Lisa by the way", "Lisadl_", "#1d3dde", undefined, undefined, true),
+			new Message("I'm Lisa by the way 😊", "Lisadl_", "#1d3dde", undefined, undefined, true),
 			new Message("Why do we dream?", undefined, undefined, undefined, true),
 			new Message("I think because we process what happened during the day", "Lisadl_", "#1d3dde", 0),
-			new Message("I don't dream much honestly", "Just_Stanley", undefined, 0, false, true),
+			new Message("I don't dream much honestly 🤷‍♂️", "Just_Stanley", undefined, 0, false, true),
 			new Message("Dreams are trying to give us signs about how we truly feel", "EmmaG", "#ff195e", 0),
 			
 		];
 	}
 	
 	addToLocalStorage(storageName) {
+		if (storageName == undefined) {
+			if (this.type == "CloseCircle") storageName = "CloseCircles";
+			else if (this.type == "OpenCircle") storageName = "OpenCircles";
+		}
+		
 		// If the localStorage list does not exist yet
 		if (localStorage.getItem(storageName) == undefined) {
 			// Create the localStorage list, containing this circle
@@ -267,6 +272,56 @@ class Circle {
 		this.setCurrent();
 		messageContainer.appendChild(message.createMessageItem());
 		this.playScript(messageContainer);
+	}
+	
+	static initializeLocalStorage() {
+		if (localStorage.OpenCircles != undefined || localStorage.CloseCircles != undefined) {
+			return;
+		}
+		
+		var circle1 = new CloseCircle("PH10 GROUP 3", 6, "chitchat");
+		circle1.photo = "img/Oranje logo.png";
+		circle1.messages = [
+			new Message("This app is so cool 😍", "JUAN", "#7F003C"),
+			new Message("Goodmorning everyone :)", "Stefani024","#1d3dde"),
+			new Message("Shall we start a Chitchat question?", "JUAN", "#7F003C"),
+			new Message("This app looks really nice but yeah let's start", "LovelyLou", "undefined"),
+			new Message("Yess let's start a question", undefined),
+			new Message("What is the most illegal thing you have ever done?", undefined, undefined, undefined, true),
+			new Message("I lit firework during new years eve, sorry..", "Kevinbkx12", "#F25D07", 0),
+			new Message("I stole 1 euro from my mom 😳", "Rory_", "#BF1B1B", 0),
+			new Message("I forgot to give a pen back, so I basically stole it 😅", undefined, undefined, 1),
+			new Message("Uhh I stole a candy form the candyshop 😂", "LovelyLou", "undefined", 3),			
+			
+		];
+		circle1.messageScript = [];
+		circle1.addToLocalStorage();
+		
+		var circle2 = new CloseCircle("Family de Lacombé", 4, "chitchat");
+		circle2.photo = "img/family.jpeg";
+		
+		circle2.messageScript = [];
+		circle2.addToLocalStorage();
+		
+		var circle3 = new CloseCircle("Friends <3", 7, "connect");
+		circle3.photo = "img/friends.jpg";
+		
+		circle3.messageScript = [];
+		circle3.addToLocalStorage();
+		
+		var circle4 = new OpenCircle("My new comrades", 8, "connect");
+		circle4.photo = "img/star.jpg"
+		circle4.time = "6";
+		
+		circle4.messageScript = [];
+		circle4.addToLocalStorage();
+		
+		var circle5 = new OpenCircle("NICE PEOPLE", 9, "chitchat");
+		circle5.time = "17";
+		
+		circle5.messageScript = [];
+		circle5.addToLocalStorage();
+		
 	}
 }
 
