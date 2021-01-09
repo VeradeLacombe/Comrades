@@ -32,7 +32,7 @@ function LeftButtonClick() {
 		var text = textInput.value;
 		textInput.value = "";
 
-		var message = new Message(text, undefined, 0);
+		var message = new Message(text, undefined, undefined, 0);
 		var circle = Circle.getCurrent();
 		circle.messages.push(message);
 		circle.updateLocalStorage();
@@ -61,13 +61,11 @@ function Typing() {
 }
 
 function MenuButton() {
-	console.log("Menu");
 	event.stopPropagation();
 	document.getElementById("dropdown").classList.add("showDropdown");
 }
 
 function ScreenClick() {
-	console.log("Screen");
 	document.getElementById("dropdown").classList.remove("showDropdown");
 }
 

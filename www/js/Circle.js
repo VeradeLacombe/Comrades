@@ -1,11 +1,12 @@
 class Message {
 	
-	constructor(message, sender, voteCount, isAQuestion, waitForYou) {
+	constructor(message, sender, color, voteCount, isAQuestion, waitForYou) {
 		this.sender = sender;
 		this.message = message;
 		this.voteCount = voteCount;
 		this.isAQuestion = isAQuestion;
 		this.waitForYou = waitForYou;
+		this.color = color;
 	}
 	
 	createMessageItem() {
@@ -66,6 +67,7 @@ class Message {
 			div2.appendChild(div3);
 			div3.className = "senderName";
 			div3.innerHTML = this.sender;
+			div3.style.color = this.color;
 			
 			var div4 = document.createElement("div");
 			div2.appendChild(div4);
@@ -78,7 +80,7 @@ class Message {
 	
 	static unserialize(messages) {
 		messages.forEach(function(message, index) {
-			this[index] = new Message(message.message, message.sender, message.voteCount, message.isAQuestion, message.waitForYou);
+			this[index] = new Message(message.message, message.sender, message.color, message.voteCount, message.isAQuestion, message.waitForYou);
 		}, messages);
 		
 		return messages;
@@ -96,16 +98,16 @@ class Circle {
 		this.startTime = new Date();
 		this.messages = [];
 		this.time = 24;
-		// new Message(text, verzender/ question=undefined, votecount / undefined, isAQuestion = true/false, waitForYou=true/false)
+		// new Message(text, verzender/ question=undefined, color, votecount / undefined, isAQuestion = true/false, waitForYou=true/false)
 		this.messageScript = [
 			new Message("Hi everyone! How are you all doing?", "Just_Stanley"),
-			new Message("Heyy I'm Emma. I'm fine. You?", "EmmaG"),
-			new Message("Hii, shall we start a question?", "Lisadl_"),
-			new Message("I'm Lisa by the way", "Lisadl_", undefined, undefined, true),
-			new Message("Why do we dream?", undefined, undefined, true),
-			new Message("I think because we process what happened during the day", "Lisadl_", 0),
-			new Message("I don't dream much honestly", "Just_Stanley", 0, false, true),
-			new Message("Dreams are trying to give us signs about how we truly feel", "EmmaG", 0, false, false),
+			new Message("Heyy I'm Emma. I'm fine. You?", "EmmaG", "#ff195e"),
+			new Message("Hii, shall we start a question?", "Lisadl_", "#1d3dde"),
+			new Message("I'm Lisa by the way", "Lisadl_", "#1d3dde", undefined, undefined, true),
+			new Message("Why do we dream?", undefined, undefined, undefined, true),
+			new Message("I think because we process what happened during the day", "Lisadl_", "#1d3dde", 0),
+			new Message("I don't dream much honestly", "Just_Stanley", undefined, 0, false, true),
+			new Message("Dreams are trying to give us signs about how we truly feel", "EmmaG", "#ff195e", 0),
 			
 		];
 	}
