@@ -60,6 +60,29 @@ function Typing() {
 	}
 }
 
+function MenuButton() {
+	console.log("Menu");
+	event.stopPropagation();
+	document.getElementById("dropdown").classList.add("showDropdown");
+}
+
+function ScreenClick() {
+	console.log("Screen");
+	document.getElementById("dropdown").classList.remove("showDropdown");
+}
+
+function leaveCircleClick() {
+	var circle = Circle.getCurrent();
+	if (circle.type == "OpenCircle") {
+		circle.deleteFromLocalStorage("OpenCircles");
+		window.location.href = "openCircle.html";
+	}
+	else if (circle.type == "CloseCircle") {
+		circle.deleteFromLocalStorage("CloseCircles");
+		window.location.href = "closeCircle.html";
+	}
+}
+
 $(document).ready(function() {
 	updatePage();
 	

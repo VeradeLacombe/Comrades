@@ -224,3 +224,28 @@
 	margin-right: 10px;
 	font-size: 18px;
 }
+
+#dropdown {
+	background-color: white;
+	color: black;
+	position: fixed;
+	top: 5px;
+	right: 5px;
+	font-size: 13px;
+	border-radius: 3px;
+	transition: 0.5s;
+	transition-timing-function: ease-out;
+	max-width: 0px;
+}
+
+#dropdown > * {
+	height: 25px;
+	line-height: 15px;
+	padding: 5px;
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.showDropdown {
+	max-width: 150px !important;
+}

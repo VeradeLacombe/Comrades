@@ -17,17 +17,23 @@
 	
 </head>
 
-<body>
+<body onClick="ScreenClick();">
 	
 	<div id="gridContainer">
 		
 		<div id="gridHeader">
 			<i class= "fas fa-arrow-left" id="backButton"></i>
 			<img alt="circlePhoto" id="circlePhoto" class="circlePhoto2" src="img/Avatar.png">
-			
+
 			<div id="title" class="circleName2"></div>
-			<i class="fa fa-ellipsis-v" style="font-size:24px"></i>
-		
+			<i class="fa fa-ellipsis-v" style="font-size:24px" onClick="MenuButton();"></i>
+
+			<div id="dropdown">
+				<div>Circle info</div>
+				<div>Mute notifications</div>
+				<div onClick="leaveCircleClick();">Leave circle</div>
+				<div>Report</div>
+			</div>
 		</div>
 	
 		<div id="gridMain"></div>
