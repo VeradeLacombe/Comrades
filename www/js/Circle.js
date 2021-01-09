@@ -302,7 +302,7 @@ class Circle {
 		circle2.messageScript = [];
 		circle2.addToLocalStorage();
 		
-		var circle3 = new CloseCircle("Friends <3", 7, "connect");
+		var circle3 = new CloseCircle("Friends &#10084", 7, "connect");
 		circle3.photo = "img/friends.jpg";
 		
 		circle3.messageScript = [];
