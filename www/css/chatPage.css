@@ -249,3 +249,41 @@
 .showDropdown {
 	max-width: 150px !important;
 }
+
+.leavePopupContainer {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 30%;
+	text-align: center;
+	z-index: 2;
+}
+
+#leavePopup {
+	background-color: #303136;
+	border-radius: 5px;
+	display: inline-block;
+	padding: 8px;
+}
+
+#shadow {
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	background-color: rgba(0,0,0,0.69);
+	z-index: 1;
+}
+
+.leaveButton {
+	display: inline-block;
+	width: 40%;
+	margin: 10px 2px;
+}
+
+#leaveYes {
+	background-color: #99AAB5;
+}
+
+#leaveNo {
+	background-color: #7289DA;
+}

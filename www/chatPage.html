@@ -19,6 +19,17 @@
 
 <body onClick="ScreenClick();">
 	
+	<div id="shadow"></div>
+	
+	<div class="leavePopupContainer">
+		<div id="leavePopup">
+			Are you sure you want to leave this circle?
+			<div id="leaveYes" class="leaveButton" onClick="leaveCircleClick();">Yes</div>
+			<div id="leaveNo" class="leaveButton" onClick="hideLeavePopup();">No</div>
+		</div>
+	</div>
+	
+	
 	<div id="gridContainer">
 		
 		<div id="gridHeader">
@@ -31,7 +42,7 @@
 			<div id="dropdown">
 				<div>Circle info</div>
 				<div>Mute notifications</div>
-				<div onClick="leaveCircleClick();">Leave circle</div>
+				<div onClick="showLeavePopup();">Leave circle</div>
 				<div>Report</div>
 			</div>
 		</div>

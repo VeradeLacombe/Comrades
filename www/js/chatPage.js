@@ -81,7 +81,19 @@ function leaveCircleClick() {
 	}
 }
 
+function showLeavePopup() {
+	$("#leavePopup").show();
+	$("#shadow").show();
+}
+
+function hideLeavePopup() {
+	$("#leavePopup").hide();
+	$("#shadow").hide();
+}
+
 $(document).ready(function() {
+	hideLeavePopup();
+	
 	updatePage();
 	
 	var currentCircle = Circle.getCurrent();
